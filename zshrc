@@ -38,7 +38,7 @@ alias radio="cvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
 alias radio2="nvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
 alias note="v ~/Documentos/MyBookmark/bookmarks"
 alias vinit="v ~/.dotfiles/init.vim"
-alias zinit="v ~/.dotfiles/.zshrc"
+alias zinit="v ~/.dotfiles/zshrc"
 alias tconf="v ~/.tmux.conf"
 alias dot="cd ~/.dotfiles/"
 #CURSOS cd
