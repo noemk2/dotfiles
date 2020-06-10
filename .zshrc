@@ -3,14 +3,22 @@ export PATH=~/.npm-global/bin:$PATH
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
 ZSH_THEME="dracula"
-plugins=(git)
+plugins=(
+	git
+	z
+	#zsh-completions
+)
 
 source $HOME/.cargo/env
+source $HOME/.fzf-z/fzf-z.plugin.zsh
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#source $ZSH/custom/plugins/zsh-completions
+source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-alias reconectar="sudo nmcli dev wifi connect ALCA password cotoperi411"
+#alias reconectar="sudo nmcli dev wifi connect ALCA password cotoperi411"
 alias v="nvim"
 alias ts="translate"
 #alias st="st -g 34x34+1370"
@@ -20,17 +28,19 @@ alias treed='tree -d -L 3'
 alias treef='tree -FL 3 | grep -v /$'
 alias treefo='tree -FL 1 | grep -v /$'
 #alias ventana1='tmux new-window \; split-window -p 66 \; split-window -d \; split-window -h'
-alias ventana2='tmux window \; split-window -p 66 \; split-window -d \; split-window -h'
-alias ventana3='tmux splitw -v \; splitw -h'
-alias ventana4='tmux new-window \; split-window \; split-window -d \; split-window -h'
+#alias ventana2='tmux window \; split-window -p 66 \; split-window -d \; split-window -h'
+#alias ventana3='tmux splitw -v \; splitw -h'
+#alias ventana4='tmux new-window \; split-window \; split-window -d \; split-window -h'
 #alias l="learnyounode"
 alias sl="systemctl suspend"
 #alias plat="cd ~/Platzi/notas_clases/js/asinc"
 alias radio="cvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
 alias radio2="nvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
 alias note="v ~/Documentos/MyBookmark/bookmarks"
-alias vinit="v ~/.config/nvim/init.vim"
+alias vinit="v ~/.dotfiles/init.vim"
+alias zinit="v ~/.dotfiles/.zshrc"
 alias tconf="v ~/.tmux.conf"
+alias dot="cd ~/.dotfiles/"
 #CURSOS cd
 alias curso="cd ~/Cursos/Pluralsight/Haskell"
 alias curso2="cd ~/Cursos/Pluralsight/React"
@@ -83,6 +93,6 @@ bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 bindkey -s '^T' 'nvim $(fzf)^M'
-bindkey -s '^G' 'cat /sys/class/power_supply/BAT0/capacity; date^M'
+bindkey -s '^B' 'cat /sys/class/power_supply/BAT0/capacity; date^M'
 bindkey '7;5u' 'backward-delete-char'
 bindkey '7;2u' 'backward-delete-char'
