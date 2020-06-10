@@ -46,11 +46,10 @@ let g:javascript_plugin_jsdoc = 1
 let g:neosnippet#enable_snipmate_compatibility = 1
 "let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
 "let base16colorspace=256
-"let g:airline_theme='base16_google'
-"let g:airline_theme='dracula'
 let g:neoformat_try_formatprg = 1
 let mapleader=","
 let g:rainbow_active = 1 
+
 :nnoremap <C-e> <C-w>
 " Explorer
 nmap <space>e :CocCommand explorer<CR>
@@ -84,7 +83,8 @@ imap <C-t> <Nop>
 :nnoremap <C-o> o
 
 "nmap  <C-s> :w! <cr> :Neoformat! <cr><cr> :w! <cr>
-nmap <silent> <C-s> :w <cr> :Neoformat <cr><cr> :w! <cr>
+nmap <silent> <C-s> :w <cr> :Neoformat <cr><cr> :w! <cr><cr> :Git add -A <cr>
+nmap <silent> <C-g> :Git commit <cr>
 "execute set <M-j>=\ej
 "nnoremap <M-j> j
 "imap <C-u> :w! <cr> :Neoformat <cr><cr> :w! <cr>
