@@ -1,10 +1,8 @@
 call plug#begin('~/.vim/plugged')
-"Plug 'lambdalisue/battery.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
 Plug 'kassio/neoterm'
 Plug 'ThePrimeagen/vim-be-good'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
@@ -15,7 +13,6 @@ Plug 'luochen1990/rainbow'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
-"Plug 'vim-airline/vim-airline'
 Plug 'itchyny/lightline.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug '~/.fzf'
@@ -26,8 +23,8 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte'
-"
 call plug#end()
+
 set nocompatible                                           
 set t_Co=16                                                
 syntax on                                                  
