@@ -1,6 +1,8 @@
 export ZSH="/home/noe/.oh-my-zsh"
 export PATH=~/.npm-global/bin:$PATH
+export PATH=~/go/bin:$PATH
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+export EDITOR=nvim
 
 ZSH_THEME="dracula"
 plugins=(
