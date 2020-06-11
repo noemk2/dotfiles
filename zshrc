@@ -22,7 +22,7 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #alias reconectar="sudo nmcli dev wifi connect ALCA password cotoperi411"
 alias v="nvim"
-alias ts="translate"
+alias t="translate"
 #alias st="st -g 34x34+1370"
 alias tree="tree -C"
 alias ..="cd .."

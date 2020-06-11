@@ -83,27 +83,15 @@ imap <C-tab> <Nop>
 imap <C-t> <Nop>
 :nnoremap <C-o> o
 ""
-function! Guardar()
-":w	
-:Neoformat
-:Git add -A 
+function Guardar()
+:Neoformat | w | Git add -A
 endfunction
 
-"function! Setpomodoro(timer_id)
-  "let l:pomodoro= system('pomodoro status')
-  "if (pomodoro != '')
-    "let g:pomodoro = l:pomodoro
-    "redraw!
-  "endif
-  "call timer_start(30000, 'Setpomodoro')
-"endfunction
-
-
-""
+"
 "nmap  <C-s> :w! <cr> :Neoformat! <cr><cr> :w! <cr>
 "nmap <silent> <C-s> :w <cr> :Neoformat <cr><cr> :w! <cr><cr> :Git add -A <cr>
-nmap <silent> <C-s> :call Guardar() <cr> 
-nmap <silent> <C-m> :Git commit <cr>
+nmap <silent> <C-s> :call Guardar()<cr> 
+"nmap <silent> <C-m> :Git commit <cr>
 "execute set <M-j>=\ej
 "nnoremap <M-j> j
 "imap <C-u> :w! <cr> :Neoformat <cr><cr> :w! <cr>
@@ -260,7 +248,7 @@ endfunction
 
 "inite
 let g:battery_level = ''
-function! SetBatteryLevel(timer_id)
+function SetBatteryLevel(timer_id)
   let l:battery_level = system('cat /sys/class/power_supply/BAT0/capacity')
   if (battery_level != '')
     let g:battery_level = l:battery_level
@@ -269,22 +257,22 @@ function! SetBatteryLevel(timer_id)
   call timer_start(30000, 'SetBatteryLevel')
 endfunction
 
-let g:pomodoro= ''
-function! Setpomodoro(timer_id)
-  let l:pomodoro= system('pomodoro status')
-  if (pomodoro != '')
-    let g:pomodoro = l:pomodoro
-    redraw!
-  endif
-  call timer_start(30000, 'Setpomodoro')
-endfunction
+"let g:pomodoro= ''
+"function Setpomodoro(timer_id)
+  "let l:pomodoro= system('pomodoro status')
+  "if (pomodoro != '')
+    "let g:pomodoro = l:pomodoro
+    "redraw!
+  "endif
+  "call timer_start(30000, 'Setpomodoro')
+"endfunction
 
 set laststatus=2
 "set noshowmode
 "set statusline+=%{g:battery_level}\ 
 
 call SetBatteryLevel(0)
-call Setpomodoro(0)
+"call Setpomodoro(0)
 let g:lightline = {
       \ 'colorscheme': 'dracula',
       \ 'active': {
@@ -295,11 +283,11 @@ let g:lightline = {
 	  \   'right':[[ 'lineinfo' ],
 	  \             [ 'bateria' ],
       "\             [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
-      \             [ 'filetype'],
-	  \               [ 'pomodoro' ]]
+      \             [ 'filetype']]
+	  "\               [ 'pomodoro' ]]
       \ },
       \ 'component': {
-      \   'bateria': '%{g:battery_level}/', 
-      \   'pomodoro': '%{g:pomodoro}/'
+      \   'bateria': '%{g:battery_level}/'
+      "\   'pomodoro': '%{g:pomodoro}/'
       \ },
       \ }
