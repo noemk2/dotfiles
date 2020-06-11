@@ -85,6 +85,7 @@ alias noc="redshift -O 4000"
 alias youtube-dll="youtube-dl --external-downloader aria2c --external-downloader-args '-x 16 -s 16 -k 1M'"
 #alias youtube-dll="youtube-dl --external-downloader /usr/local/bin/hget --external-downloader-args ''"
 alias pwdcp='pwd | xclip -selection clipboard'
+alias cclip='xclip -selection clipboard'
 #alias pwdcp='pwd | xclip -sel clip'
 #alias extraer='tar -zxvf'
 #fix ctrl arrow

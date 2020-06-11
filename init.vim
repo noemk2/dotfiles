@@ -23,7 +23,7 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
 Plug 'pangloss/vim-javascript'
-Plug 'evanleck/vim-svelte'
+"Plug 'evanleck/vim-svelte'
 call plug#end()
 
 set nocompatible                                           
@@ -84,14 +84,14 @@ imap <C-t> <Nop>
 :nnoremap <C-o> o
 ""
 function Guardar()
-:Neoformat | w | Git add -A
+:Neoformat | w! | Git add -A
 endfunction
 
 "
 "nmap  <C-s> :w! <cr> :Neoformat! <cr><cr> :w! <cr>
 "nmap <silent> <C-s> :w <cr> :Neoformat <cr><cr> :w! <cr><cr> :Git add -A <cr>
 nmap <silent> <C-s> :call Guardar()<cr> 
-"nmap <silent> <C-m> :Git commit <cr>
+nmap <silent> <C-z> :Git commit <cr>
 "execute set <M-j>=\ej
 "nnoremap <M-j> j
 "imap <C-u> :w! <cr> :Neoformat <cr><cr> :w! <cr>
