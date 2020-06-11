@@ -70,6 +70,7 @@ nmap <silent><C-0> :Rg<CR>
 
 "map <ESC><Nop>
 map <C-,> <Nop>
+map <C-m> <Nop>
 map <C-o> <Nop>
 map <C-z> <Nop>
 map <C-;> <Nop>
@@ -81,10 +82,28 @@ imap <C-u> <Nop>
 imap <C-tab> <Nop>
 imap <C-t> <Nop>
 :nnoremap <C-o> o
+""
+function! Guardar()
+":w	
+:Neoformat
+:Git add -A 
+endfunction
 
+"function! Setpomodoro(timer_id)
+  "let l:pomodoro= system('pomodoro status')
+  "if (pomodoro != '')
+    "let g:pomodoro = l:pomodoro
+    "redraw!
+  "endif
+  "call timer_start(30000, 'Setpomodoro')
+"endfunction
+
+
+""
 "nmap  <C-s> :w! <cr> :Neoformat! <cr><cr> :w! <cr>
-nmap <silent> <C-s> :w <cr> :Neoformat <cr><cr> :w! <cr><cr> :Git add -A <cr>
-nmap <silent> <C-g> :Git commit <cr>
+"nmap <silent> <C-s> :w <cr> :Neoformat <cr><cr> :w! <cr><cr> :Git add -A <cr>
+nmap <silent> <C-s> :call Guardar() <cr> 
+nmap <silent> <C-m> :Git commit <cr>
 "execute set <M-j>=\ej
 "nnoremap <M-j> j
 "imap <C-u> :w! <cr> :Neoformat <cr><cr> :w! <cr>
