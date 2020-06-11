@@ -25,6 +25,8 @@ Plug 'honza/vim-snippets'
 Plug 'pangloss/vim-javascript'
 "Plug 'evanleck/vim-svelte'
 call plug#end()
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 
 set nocompatible                                           
 set t_Co=16                                                
@@ -102,8 +104,11 @@ nmap <silent> <C-z> :Git commit <cr>
 :tnoremap <C-w> <C-\><C-n>
 ":tnoremap <C-x> <C-\><C-n>
 nmap <C-tab> :tabnext <CR>
+nmap <C-q> :tabprevious <CR>
 "imap <C-tab> :tabnew <cfile><CR>
 imap <C-tab> <ESC> :tabnext <cfile> <CR>
+imap <C-q> <ESC> :tabprevious <cfile> <CR>
+
 nmap <C-t> :tabnew <CR>
 nmap <C-y> :tabnew <CR>:terminal <CR>
 "imap <C-t> :tabnew <cfile><CR>
