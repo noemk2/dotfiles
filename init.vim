@@ -1,4 +1,7 @@
 call plug#begin('~/.vim/plugged')
+"Plug 'mhinz/vim-startify'
+"Plug 'okcompute/vim-ctrlp-session'
+"Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
@@ -17,16 +20,29 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug '~/.fzf'
+"Plug '~/.fzf-session.vim'
+Plug 'dominickng/fzf-session.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
 Plug 'pangloss/vim-javascript'
-"Plug 'evanleck/vim-svelte'
+Plug 'evanleck/vim-svelte'
 call plug#end()
+"let g:ctrlp_map = '<c-i>'
+"let g:ctrlp_cmd = 'CtrlV'
+"let g:fzf_session_path = $HOME . '/tmp/vim/session'
+let g:fzf_session_path = $HOME
+" Launches fzf prompt to search sessions with <leader>l.
+nnoremap <leader> l :Sessions<CR>
+
+" Starts the prompt to save a session, awaiting a name to be entered.
+nnoremap <leader> s :Session<Space>
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
+vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
+nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 
 set nocompatible                                           
 set t_Co=16                                                
@@ -67,7 +83,7 @@ autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | end
 ":nnoremap <C-n> :NERDTreeToggle<CR>
 "nmap <silent> <leader>m :History<CR>
 nmap <silent><C-p> :History<CR>
-nmap <silent><C-0> :Rg<CR>
+nmap <silent><C-0> :Rg <CR>
 ":nnoremap <C-p> :Rg<CR>
 
 "map <ESC><Nop>
