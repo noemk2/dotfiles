@@ -4,9 +4,9 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
 Plug 'kassio/neoterm'
 Plug 'ThePrimeagen/vim-be-good'
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'tpope/vim-surround'
 Plug 'sbdchd/neoformat'
 Plug 'raimondi/delimitmate'
@@ -82,6 +82,7 @@ map <C-d> <Nop>
 map <C-t> <Nop>
 imap <C-u> <Nop>
 imap <C-tab> <Nop>
+imap <C-Space> <Nop>
 imap <C-t> <Nop>
 :nnoremap <C-o> o
 ""
@@ -101,13 +102,14 @@ nmap <silent> <C-z> :Git commit <cr>
 "inoremap <tab> def
 :tnoremap <ESC> <C-\><C-n>
 :tnoremap <C-tab> <C-\><C-n>
+:tnoremap <C-Space> <C-\><C-n>
 :tnoremap <C-w> <C-\><C-n>
 ":tnoremap <C-x> <C-\><C-n>
-nmap <C-tab> :tabnext <CR>
-nmap <C-q> :tabprevious <CR>
+nmap <C-tab> :tabnext  <CR>
+nmap <C-Space> :tabprevious <CR>
 "imap <C-tab> :tabnew <cfile><CR>
 imap <C-tab> <ESC> :tabnext <cfile> <CR>
-imap <C-q> <ESC> :tabprevious <cfile> <CR>
+imap <C-Space> <ESC>:tabprevious  <cfile> <CR>
 
 nmap <C-t> :tabnew <CR>
 nmap <C-y> :tabnew <CR>:terminal <CR>

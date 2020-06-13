@@ -11,7 +11,7 @@ plugins=(
 	#zsh-completions
 )
 
-source $HOME/.cargo/env
+#source $HOME/.cargo/env
 source $HOME/.fzf-z/fzf-z.plugin.zsh
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -99,3 +99,4 @@ bindkey -s '^T' 'nvim $(fzf)^M'
 bindkey -s '^B' 'cat /sys/class/power_supply/BAT0/capacity; date^M'
 bindkey '7;5u' 'backward-delete-char'
 bindkey '7;2u' 'backward-delete-char'
+bindkey '1;5u' autosuggest-execute
