@@ -1,7 +1,5 @@
 call plug#begin('~/.vim/plugged')
 "Plug 'mhinz/vim-startify'
-"Plug 'okcompute/vim-ctrlp-session'
-"Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
@@ -29,12 +27,7 @@ Plug 'honza/vim-snippets'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte'
 call plug#end()
-"let g:ctrlp_map = '<c-i>'
-"let g:ctrlp_cmd = 'CtrlV'
 "let g:fzf_session_path = $HOME . '/tmp/vim/session'
-" Launches fzf prompt to search sessions with <leader>l.
-
-" Starts the prompt to save a session, awaiting a name to be entered.
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
@@ -286,27 +279,28 @@ endfunction
   "call timer_start(30000, 'Setpomodoro')
 "endfunction
 
-set laststatus=2
 "set noshowmode
 "set statusline+=%{g:battery_level}\ 
 
 call SetBatteryLevel(0)
 "call Setpomodoro(0)
+
 let g:lightline = {
-      \ 'colorscheme': 'dracula',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'filename', 'modified'  ] ], 
-      "\             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
+	  \ 'colorscheme': 'dracula',
+	  \ 'active': {
+	  \   'left': [ [ 'mode', 'paste' ],
+	  \              [ 'readonly', 'absolutepath', 'modified' ] ], 
+	  "\             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
 	  "\   'right': [ [ 'lineinfo' ],
 	  \   'right':[[ 'lineinfo' ],
 	  \             [ 'bateria' ],
-      "\             [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
-      \             [ 'filetype']]
+	  "\             [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+	  \             [ 'filetype']]
 	  "\               [ 'pomodoro' ]]
-      \ },
-      \ 'component': {
-      \   'bateria': '%{g:battery_level}/'
-      "\   'pomodoro': '%{g:pomodoro}/'
-      \ },
-      \ }
+	  \ },
+	  \ 'component': {
+	  \   'bateria': '%{g:battery_level}/'
+	  "\   'pomodoro': '%{g:pomodoro}/'
+	  \ },
+	  \ }
+
