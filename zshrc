@@ -31,13 +31,13 @@ alias poweroff="sudo poweroff"
 #alias st="st -g 34x34+1370"
 #alias tree="tree -C"
 #alias ..="cd .."
-alias iniciar="sudo airmon-ng start wlp1s0 11"
-alias radar="sudo airodump-ng wlp1s0mon"
-alias buscar="sudo airodump-ng --bssid 58:6D:8F:7A:4E:45 -c 11 wlp1s0mon"
-alias ataque="sudo aireplay-ng -d D4:28:D5:30:5B:86 -e ALCA --deauth 10 wlp1s0mon"
-alias recoger="sudo airodump-ng -w /home/noe/document/aircrackGlobal/capturas/hola --bssid 58:6D:8F:7A:4E:45 -c 11 wlp1s0mon"
-alias desifrar="sudo aircrack-ng /home/noe/document/aircrackGlobal/capturas-02.* -w /home/noe/document/aircrackGlobal/dictionary/hola.txt"
-#alias treed='tree -d -L 3'
+#alias iniciar="sudo airmon-ng start wlp1s0 11"
+#alias radar="sudo airodump-ng wlp1s0mon"
+#alias buscar="sudo airodump-ng --bssid 58:6D:8F:7A:4E:45 -c 11 wlp1s0mon"
+#alias ataque="sudo aireplay-ng -d D4:28:D5:30:5B:86 -e ALCA --deauth 10 wlp1s0mon"
+#alias recoger="sudo airodump-ng -w /home/noe/document/aircrackGlobal/capturas/hola --bssid 58:6D:8F:7A:4E:45 -c 11 wlp1s0mon"
+#alias desifrar="sudo aircrack-ng /home/noe/document/aircrackGlobal/capturas-02.* -w /home/noe/document/aircrackGlobal/dictionary/hola.txt"
+##alias treed='tree -d -L 3'
 #alias treef='tree -FL 3 | grep -v /$'
 #alias treefo='tree -FL 1 | grep -v /$'
 #alias ventana1='tmux new-window \; split-window -p 66 \; split-window -d \; split-window -h'
@@ -47,8 +47,8 @@ alias desifrar="sudo aircrack-ng /home/noe/document/aircrackGlobal/capturas-02.*
 #alias l="learnyounode"
 alias sl="sudo systemctl suspend"
 #alias plat="cd ~/Platzi/notas_clases/js/asinc"
-#alias radio="cvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
-#alias radio2="nvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
+alias radio="cvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
+alias radio2="nvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
 #alias note="v ~/Documentos/MyBookmark/bookmarks"
 alias vinit="v ~/.dotfiles/init.vim"
 alias zinit="v ~/.dotfiles/zshrc"
@@ -95,7 +95,7 @@ alias noc="redshift -O 4000"
 #alias ll='ls --color=auto -l'
 #alias bt='cat /sys/class/power_supply/BAT0/capacity'
 #alias youtube-dll="youtube-dl -c -i --external-downloader-args '-s 200000' --external-downloader '/usr/local/bin/hget'"
-#alias youtube-dll="youtube-dl --external-downloader aria2c --external-downloader-args '-x 16 -s 16 -k 1M'"
+alias youtube-dll="youtube-dl --external-downloader aria2c --external-downloader-args '-x 16 -s 16 -k 1M'"
 #alias youtube-dll="youtube-dl --external-downloader /usr/local/bin/hget --external-downloader-args ''"
 alias pwdcp='pwd | xclip -selection clipboard'
 alias cclip='xclip -selection clipboard'
@@ -114,4 +114,13 @@ bindkey '7;5u' 'backward-delete-char'
 bindkey '7;2u' 'backward-delete-char'
 bindkey '1;5u' autosuggest-execute
 bindkey ';5u' autosuggest-execute
+kp () {
+	local pid=$(ps -ef | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[kill:process]'" | awk '{print $2}')
+
+if [ "x$pid" != "x" ]
+then
+  echo $pid | xargs sudo kill -${1:-9}
+  kp
+fi
+}
 

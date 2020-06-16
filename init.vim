@@ -21,7 +21,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug '~/.fzf'
 "Plug '~/.fzf-session.vim'
-Plug 'dominickng/fzf-session.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 Plug 'Shougo/neosnippet.vim'
@@ -33,12 +32,9 @@ call plug#end()
 "let g:ctrlp_map = '<c-i>'
 "let g:ctrlp_cmd = 'CtrlV'
 "let g:fzf_session_path = $HOME . '/tmp/vim/session'
-let g:fzf_session_path = $HOME
 " Launches fzf prompt to search sessions with <leader>l.
-nnoremap <leader> l :Sessions<CR>
 
 " Starts the prompt to save a session, awaiting a name to be entered.
-nnoremap <leader> s :Session<Space>
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
