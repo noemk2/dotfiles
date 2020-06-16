@@ -99,6 +99,7 @@ endfunction
 "nmap  <C-s> :w! <cr> :Neoformat! <cr><cr> :w! <cr>
 "nmap <silent> <C-s> :w <cr> :Neoformat <cr><cr> :w! <cr><cr> :Git add -A <cr>
 nmap <silent> <C-s> :call Guardar()<cr> 
+nmap <silent> <C-g> :put=strftime('%c')<cr> 
 nmap <silent> <C-z> :Git commit <cr>
 "execute set <M-j>=\ej
 "nnoremap <M-j> j
@@ -284,18 +285,19 @@ endfunction
 
 call SetBatteryLevel(0)
 "call Setpomodoro(0)
-
+ "'readonly', filetype, 'lineinfo'
 let g:lightline = {
 	  \ 'colorscheme': 'dracula',
 	  \ 'active': {
 	  \   'left': [ [ 'mode', 'paste' ],
-	  \              [ 'readonly', 'absolutepath', 'modified' ] ], 
+	  \              [  'absolutepath', 'modified' ] ], 
 	  "\             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
 	  "\   'right': [ [ 'lineinfo' ],
-	  \   'right':[[ 'lineinfo' ],
-	  \             [ 'bateria' ],
+	  \   'right':[
+	  \			    [],
+	  \             [ 'bateria' ], 
 	  "\             [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
-	  \             [ 'filetype']]
+	  \             [ ]]
 	  "\               [ 'pomodoro' ]]
 	  \ },
 	  \ 'component': {
@@ -303,4 +305,5 @@ let g:lightline = {
 	  "\   'pomodoro': '%{g:pomodoro}/'
 	  \ },
 	  \ }
+
 
