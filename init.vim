@@ -27,15 +27,18 @@ Plug 'honza/vim-snippets'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte'
 call plug#end()
+:map! <S-k> <Nop>
+
 "let g:fzf_session_path = $HOME . '/tmp/vim/session'
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
-vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
-nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
-
+"vnoremap <silent><Leader>y "yy <Bar> :call system('xclip', @y)<CR>
+"vnoremap <silent> p<Bar> :call system('xclip -o -selection clipboard')<CR>
+"vnoremap <silent> p<Bar> :call system('xclip -o -selection clipboard', @y)<CR>
 set nocompatible                                           
 set t_Co=16                                                
 syntax on                                                  
+
 "set background=dark  
 "colorscheme solarized                                      
 colorscheme dracula
@@ -91,14 +94,17 @@ imap <C-Space> <Nop>
 imap <C-t> <Nop>
 :nnoremap <C-o> o
 ""
-function Guardar()
-:Neoformat | w! | Git add -A
+function! Guardar()
+:w! | :Neoformat | :w! | :Git add -A
+":w! | :Neoformat 
 endfunction
 
 "
 "nmap  <C-s> :w! <cr> :Neoformat! <cr><cr> :w! <cr>
-"nmap <silent> <C-s> :w <cr> :Neoformat <cr><cr> :w! <cr><cr> :Git add -A <cr>
+"noremap <silent> <C-s> :w! <cr> :Neoformat <cr><cr> :w! <cr><cr> :Git add -A <cr>
+"noremap <silent> <C-s> :Neoformat | w! | Git add -A <cr>
 nmap <silent> <C-s> :call Guardar()<cr> 
+"noremap <silent> <C-s> :call Guardar()<CR>
 nmap <silent> <C-g> :put=strftime('%c')<cr> 
 nmap <silent> <C-z> :Git commit <cr>
 "execute set <M-j>=\ej
@@ -106,16 +112,24 @@ nmap <silent> <C-z> :Git commit <cr>
 "imap <C-u> :w! <cr> :Neoformat <cr><cr> :w! <cr>
 "imap <C-u> <ESC> :w! <cfile> <CR>
 "inoremap <tab> def
-:tnoremap <ESC> <C-\><C-n>
+:tnoremap <ESC> <C-\><C-n><cr> :noh <cr> 
+noremap <ESC> :noh <cr> 
+"
 :tnoremap <C-tab> <C-\><C-n>
 :tnoremap <C-Space> <C-\><C-n>
+"
+
 :tnoremap <C-w> <C-\><C-n>
 ":tnoremap <C-x> <C-\><C-n>
+"
 nmap <C-tab> :tabnext  <CR>
 nmap <C-Space> :tabprevious <CR>
+"
 "imap <C-tab> :tabnew <cfile><CR>
+"
 imap <C-tab> <ESC> :tabnext <cfile> <CR>
 imap <C-Space> <ESC>:tabprevious  <cfile> <CR>
+"
 
 nmap <C-t> :tabnew <CR>
 nmap <C-y> :tabnew <CR>:terminal <CR>
@@ -270,40 +284,39 @@ function SetBatteryLevel(timer_id)
   call timer_start(30000, 'SetBatteryLevel')
 endfunction
 
-"let g:pomodoro= ''
-"function Setpomodoro(timer_id)
-  "let l:pomodoro= system('pomodoro status')
-  "if (pomodoro != '')
-    "let g:pomodoro = l:pomodoro
-    "redraw!
-  "endif
-  "call timer_start(30000, 'Setpomodoro')
-"endfunction
+let g:pomodoro= ''
+function Setpomodoro(timer_id)
+  let l:pomodoro= system('pomodoro status')
+  if (pomodoro != '')
+	let g:pomodoro = l:pomodoro
+	redraw!
+  endif
+  call timer_start(30000, 'Setpomodoro')
+endfunction
 
-"set noshowmode
-"set statusline+=%{g:battery_level}\ 
+set noshowmode
+set statusline+=%{g:battery_level}\ 
 
 call SetBatteryLevel(0)
-"call Setpomodoro(0)
+call Setpomodoro(0)
  "'readonly', filetype, 'lineinfo'
 let g:lightline = {
 	  \ 'colorscheme': 'dracula',
 	  \ 'active': {
 	  \   'left': [ [ 'mode', 'paste' ],
-	  \              [  'absolutepath', 'modified' ] ], 
+	  \              [ 'absolutepath', 'modified' ] ], 
 	  "\             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
 	  "\   'right': [ [ 'lineinfo' ],
 	  \   'right':[
-	  \			    [],
+	  \			    ['pomodoro'],
 	  \             [ 'bateria' ], 
 	  "\             [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
-	  \             [ ]]
+	  \             []]
 	  "\               [ 'pomodoro' ]]
 	  \ },
 	  \ 'component': {
-	  \   'bateria': '%{g:battery_level}/'
-	  "\   'pomodoro': '%{g:pomodoro}/'
+	  \   'bateria': '%{g:battery_level}/', 
+	  \   'pomodoro': '%{g:pomodoro}/'
 	  \ },
 	  \ }
-
 
