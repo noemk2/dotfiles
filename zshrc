@@ -4,6 +4,7 @@ export PATH=~/go/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export EDITOR=nvim
+# xclip -sel clip
 
 ZSH_THEME="dracula"
 plugins=(
@@ -22,16 +23,18 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 #alias reconectar="sudo nmcli dev wifi connect ALCA password cotoperi411"
+alias wget="wget --passive-ftp -c -O"
 alias v="nvim"
 alias reboot="sudo reboot"
 alias poweroff="sudo poweroff"
 #alias  suspend="sudo systemctl suspend"
-alias "cs=xclip -selection clipboard"
-alias "vs=xclip -o -selection clipboard"
+#alias "cs=xclip -selection clipboard"
+#alias "vs=xclip -o -selection clipboard"
 #alias systemctl="sudo systemctl"
 alias t="translate"
-#alias st="st -g 34x34+1370"
+alias st="st -g 34x34+1370"
 alias tree="tree -C"
+alias ccc="xclip -sel clip"
 #alias ..="cd .."
 #alias iniciar="sudo airmon-ng start wlp1s0 11"
 #alias radar="sudo airodump-ng wlp1s0mon"

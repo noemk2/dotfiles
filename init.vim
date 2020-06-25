@@ -32,6 +32,7 @@ call plug#end()
 "let g:fzf_session_path = $HOME . '/tmp/vim/session'
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
+" Copy/Paste
 "vnoremap <silent><Leader>y "yy <Bar> :call system('xclip', @y)<CR>
 "vnoremap <silent> p<Bar> :call system('xclip -o -selection clipboard')<CR>
 "vnoremap <silent> p<Bar> :call system('xclip -o -selection clipboard', @y)<CR>
