@@ -13,7 +13,7 @@ plugins=(
 	#zsh-completions
 )
 
-#source $HOME/.cargo/env
+source $HOME/.cargo/env
 source $HOME/.fzf-z/fzf-z.plugin.zsh
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -25,8 +25,8 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #alias reconectar="sudo nmcli dev wifi connect ALCA password cotoperi411"
 alias wget="wget --passive-ftp -c -O"
 alias v="nvim"
-alias reboot="sudo reboot"
-alias poweroff="sudo poweroff"
+#alias reboot="sudo reboot"
+#alias poweroff="sudo poweroff"
 #alias  suspend="sudo systemctl suspend"
 #alias "cs=xclip -selection clipboard"
 #alias "vs=xclip -o -selection clipboard"
@@ -50,7 +50,8 @@ alias ccc="xclip -sel clip"
 #alias ventana3='tmux splitw -v \; splitw -h'
 #alias ventana4='tmux new-window \; split-window \; split-window -d \; split-window -h'
 #alias l="learnyounode"
-alias sl="sudo systemctl suspend"
+#alias sl="sudo systemctl suspend"
+alias sl="suspend"
 #alias plat="cd ~/Platzi/notas_clases/js/asinc"
 alias radio="cvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
 alias radio2="nvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"

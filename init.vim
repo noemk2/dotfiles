@@ -285,21 +285,21 @@ function SetBatteryLevel(timer_id)
   call timer_start(30000, 'SetBatteryLevel')
 endfunction
 
-let g:pomodoro= ''
-function Setpomodoro(timer_id)
-  let l:pomodoro= system('pomodoro status')
-  if (pomodoro != '')
-	let g:pomodoro = l:pomodoro
-	redraw!
-  endif
-  call timer_start(30000, 'Setpomodoro')
-endfunction
+"let g:pomodoro= ''
+"function Setpomodoro(timer_id)
+  "let l:pomodoro= system('pomodoro status')
+  "if (pomodoro != '')
+	"let g:pomodoro = l:pomodoro
+	"redraw!
+  "endif
+  "call timer_start(30000, 'Setpomodoro')
+"endfunction
 
 set noshowmode
 set statusline+=%{g:battery_level}\ 
 
 call SetBatteryLevel(0)
-call Setpomodoro(0)
+"call Setpomodoro(0)
  "'readonly', filetype, 'lineinfo'
 let g:lightline = {
 	  \ 'colorscheme': 'dracula',
@@ -317,7 +317,7 @@ let g:lightline = {
 	  \ },
 	  \ 'component': {
 	  \   'bateria': '%{g:battery_level}/', 
-	  \   'pomodoro': '%{g:pomodoro}/'
+	  "\   'pomodoro': '%{g:pomodoro}/'
 	  \ },
 	  \ }
 
