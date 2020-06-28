@@ -27,11 +27,11 @@ Plug 'honza/vim-snippets'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte'
 call plug#end()
-:map! <S-k> <Nop>
 
 "let g:fzf_session_path = $HOME . '/tmp/vim/session'
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
+map <s-k> <Nop>
 " Copy/Paste
 "vnoremap <silent><Leader>y "yy <Bar> :call system('xclip', @y)<CR>
 "vnoremap <silent> p<Bar> :call system('xclip -o -selection clipboard')<CR>
@@ -58,7 +58,7 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 "let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
 "let base16colorspace=256
 let g:neoformat_try_formatprg = 1
-let mapleader=","
+let mapleader="g"
 let g:rainbow_active = 1 
 
 :nnoremap <C-e> <C-w>
@@ -116,20 +116,57 @@ nmap <silent> <C-z> :Git commit <cr>
 :tnoremap <ESC> <C-\><C-n><cr> :noh <cr> 
 noremap <ESC> :noh <cr> 
 "
-:tnoremap <C-tab> <C-\><C-n>
-:tnoremap <C-Space> <C-\><C-n>
-"
+":tnoremap <C-tab> <C-\><C-n>
+":tnoremap <C-Space> <C-\><C-n>
+":tnoremap <M-j> <C-\><C-n>
+":tnoremap <M-k> <C-\><C-n>
 
-:tnoremap <C-w> <C-\><C-n>
+":tnoremap <C-j> <C-\><C-n>
+":tnoremap <C-k> <C-\><C-n>
+
+":tnoremap <C-w> <C-\><C-n>
 ":tnoremap <C-x> <C-\><C-n>
 "
-nmap <C-tab> :tabnext  <CR>
-nmap <C-Space> :tabprevious <CR>
+"nmap <C-j> :tabnext  <CR>
+"nmap <M-j> :tabnext  <CR>
+nmap <Leader>j :tabnext  <CR>
+tnoremap <Leader>j :tabnext  <CR>
+
+"nmap <C-Space> :tabprevious <CR>
+"nmap <C-k> :tabprevious <CR>
+"nmap <M-k> :tabprevious <CR>
+nmap <Leader>k :tabprevious <CR>
+tnoremap <Leader>k :tabprevious <CR>
+
+nmap <Leader>0 :tabfirst<CR>
+tnoremap  <Leader>0 :tabfirst<CR>
+
+nmap <Leader>$ :tablast<CR>
+tnoremap <Leader>$ :tablast<CR>
 "
 "imap <C-tab> :tabnew <cfile><CR>
 "
-imap <C-tab> <ESC> :tabnext <cfile> <CR>
-imap <C-Space> <ESC>:tabprevious  <cfile> <CR>
+"imap <C-j> <ESC> :tabnext <cfile> <CR>
+"nmap <M-k> :tabprevious <CR>
+"imap <C-Space> <ESC>:tabprevious  <cfile> <CR>
+"imap <C-k> <ESC>:tabprevious  <cfile> <CR>
+"imap <M-k> <ESC>:tabprevious  <cfile> <CR>
+nmap <M-1> :tabm 0 <CR>
+tnoremap <M-1> :tabm 0 <CR>
+
+"nmap <M-2> :tabm 1 <CR>
+"tnoremap <M-2> :tabm 1 <CR>
+
+nmap <M-2> :tabm 2 <CR>
+tnoremap <M-2> :tabm 2 <CR>
+
+nmap <M-4> :tabm 4 <CR>
+tnoremap <M-4> :tabm 4 <CR>
+
+nmap <M-3> :tabm 3 <CR>
+tnoremap <M-3> :tabm 3 <CR>
+
+
 "
 
 nmap <C-t> :tabnew <CR>
@@ -177,8 +214,8 @@ nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 "nmap <M-k> <C-w>k
 "nmap <M-l> <C-w>l
 nmap <C-h> <C-e>h
-nmap <C-j> <C-e>j
-nmap <C-k> <C-e>k
+"nmap <C-j> <C-e>j
+"nmap <C-k> <C-e>k
 nmap <C-l> <C-e>l
 let g:multi_cursor_use_default_mapping=0
 
