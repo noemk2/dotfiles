@@ -124,25 +124,30 @@ noremap <ESC> :noh <cr>
 ":tnoremap <C-j> <C-\><C-n>
 ":tnoremap <C-k> <C-\><C-n>
 
-":tnoremap <C-w> <C-\><C-n>
+:tnoremap <C-w> <C-\><C-n>
+:tnoremap <C-j> <C-\><C-n>
+:tnoremap <C-k> <C-\><C-n>
 ":tnoremap <C-x> <C-\><C-n>
 "
 "nmap <C-j> :tabnext  <CR>
 "nmap <M-j> :tabnext  <CR>
 nmap <Leader>j :tabnext  <CR>
-tnoremap <Leader>j :tabnext  <CR>
+tnoremap <Leader>j <C-\><C-n>
 
 "nmap <C-Space> :tabprevious <CR>
 "nmap <C-k> :tabprevious <CR>
 "nmap <M-k> :tabprevious <CR>
 nmap <Leader>k :tabprevious <CR>
-tnoremap <Leader>k :tabprevious <CR>
+tnoremap <Leader>k <C-\><C-n>
 
 nmap <Leader>0 :tabfirst<CR>
-tnoremap  <Leader>0 :tabfirst<CR>
+tnoremap  <Leader>0 <C-\><C-n>
 
 nmap <Leader>$ :tablast<CR>
-tnoremap <Leader>$ :tablast<CR>
+tnoremap <Leader>$ <C-\><C-n>
+
+nmap <Leader>m :tabmove<CR>
+tnoremap <Leader>m <C-\><C-n>
 "
 "imap <C-tab> :tabnew <cfile><CR>
 "
@@ -214,8 +219,8 @@ nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 "nmap <M-k> <C-w>k
 "nmap <M-l> <C-w>l
 nmap <C-h> <C-e>h
-"nmap <C-j> <C-e>j
-"nmap <C-k> <C-e>k
+nmap <C-j> <C-e>j
+nmap <C-k> <C-e>k
 nmap <C-l> <C-e>l
 let g:multi_cursor_use_default_mapping=0
 
