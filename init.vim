@@ -178,6 +178,7 @@ nmap <C-t> :tabnew <CR>
 nmap <C-y> :tabnew <CR>:terminal <CR>
 "imap <C-t> :tabnew <cfile><CR>
 imap <C-t> <ESC> :tabnew <cfile> <CR>
+imap <C-j> <ESC> <cfile> <CR>
 
 nmap <F12> :VimBeGood<CR>
 map <F2> :wq! <CR>
