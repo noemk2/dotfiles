@@ -4,6 +4,7 @@ export PATH=~/go/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export EDITOR=nvim
+export TERM=xterm-256color
 # xclip -sel clip
 
 ZSH_THEME="dracula"
@@ -24,7 +25,9 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #alias reconectar="sudo nmcli dev wifi connect ALCA password cotoperi411"
 alias wget="wget --passive-ftp -c -O"
+#alias wget="wget --passive-ftp -c "
 alias v="nvim"
+alias q="qutebrowser"
 #alias reboot="sudo reboot"
 #alias poweroff="sudo poweroff"
 #alias  suspend="sudo systemctl suspend"
@@ -108,6 +111,7 @@ alias cclip='xclip -selection clipboard'
 #alias pwdcp='pwd | xclip -sel clip'
 #alias extraer='tar -zxvf'
 #fix ctrl arrow
+
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 #fir supr
@@ -120,6 +124,8 @@ bindkey '7;5u' 'backward-delete-char'
 bindkey '7;2u' 'backward-delete-char'
 bindkey '1;5u' autosuggest-execute
 bindkey ';5u' autosuggest-execute
+bindkey -s "^[OM" "^M"
+
 kp () {
 	local pid=$(ps -ef | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[kill:process]'" | awk '{print $2}')
 

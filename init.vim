@@ -1,10 +1,33 @@
 call plug#begin('~/.vim/plugged')
-"Plug 'mhinz/vim-startify'
+"jsx
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+"Plug 'nathanaelkane/vim-indent-guides'
+
+"Plug 'altercation/vim-colors-solarized'
+
+"Plug 'pangloss/vim-javascript'
+"Plug 'mxw/vim-jsx'
+"Plug 'lifepillar/vim-solarized8'
+
+
+"Plug 'maxmellon/vim-jsx-pretty'
+"Plug 'jelera/vim-javascript-syntax'
+"Plug 'mxw/vim-jsx'
+"Plug 'elzr/vim-json'
+
+"Plug 'pangloss/vim-javascript'
+"Plug 'leafgarland/typescript-vim'
+"Plug 'peitalin/vim-jsx-typescript'
+"Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+"Plug 'jparise/vim-graphql'
+
 Plug 'tpope/vim-fugitive'
+"Plug 'altercation/vim-colors-solarized'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
 Plug 'kassio/neoterm'
-Plug 'ThePrimeagen/vim-be-good'
+"Plug 'ThePrimeagen/vim-be-good'
 "Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 "Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
 "Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
@@ -12,11 +35,12 @@ Plug 'tpope/vim-surround'
 Plug 'sbdchd/neoformat'
 Plug 'raimondi/delimitmate'
 Plug 'luochen1990/rainbow'
-Plug 'christoomey/vim-tmux-navigator'
+"Plug 'christoomey/vim-tmux-navigator'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+
 Plug '~/.fzf'
 "Plug '~/.fzf-session.vim'
 Plug 'junegunn/fzf.vim'
@@ -24,25 +48,37 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
-Plug 'pangloss/vim-javascript'
-Plug 'evanleck/vim-svelte'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'pangloss/vim-javascript'
+"Plug 'evanleck/vim-svelte'
 call plug#end()
+syntax enable
+set background=dark
+colorscheme dracula
 
+let g:vim_jsx_pretty_colorful_config = 1 
+let g:vim_jsx_pretty_highlight_close_tag = 1
+
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_start_level=2
+"let g:indent_guides_guide_size=1
 "let g:fzf_session_path = $HOME . '/tmp/vim/session'
+"let g:vim_jsx_pretty_colorful_config = 1 " default 0
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 map <s-k> <Nop>
+set t_AB=^[[48;5;%dm
+set t_AF=^[[38;5;%dm
 " Copy/Paste
 "vnoremap <silent><Leader>y "yy <Bar> :call system('xclip', @y)<CR>
 "vnoremap <silent> p<Bar> :call system('xclip -o -selection clipboard')<CR>
 "vnoremap <silent> p<Bar> :call system('xclip -o -selection clipboard', @y)<CR>
 set nocompatible                                           
-set t_Co=16                                                
-syntax on                                                  
+"set t_Co=256
 
-"set background=dark  
 "colorscheme solarized                                      
-colorscheme dracula
+"colorscheme dracula
+"colorscheme solarized 
 filetype plugin on
 highlight LineNr ctermfg=blue term=bold
 ":highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
@@ -50,7 +86,7 @@ highlight LineNr ctermfg=blue term=bold
 let g:neoterm_size= 10
 
 let g:user_emmet_leader_key=','
-let g:tmux_navigator_disable_when_zoomed = 1
+"let g:tmux_navigator_disable_when_zoomed = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
@@ -81,6 +117,7 @@ nmap <silent><C-0> :Rg <CR>
 
 "map <ESC><Nop>
 map <C-,> <Nop>
+map <S-j> <Nop>
 map <C-m> <Nop>
 map <C-o> <Nop>
 map <C-z> <Nop>
@@ -125,20 +162,22 @@ noremap <ESC> :noh <cr>
 ":tnoremap <C-k> <C-\><C-n>
 
 :tnoremap <C-w> <C-\><C-n>
-:tnoremap <C-j> <C-\><C-n>
-:tnoremap <C-k> <C-\><C-n>
+:tnoremap <S-j> <C-\><C-n>
+:tnoremap <S-k> <C-\><C-n>
 ":tnoremap <C-x> <C-\><C-n>
 "
 "nmap <C-j> :tabnext  <CR>
-"nmap <M-j> :tabnext  <CR>
-nmap <Leader>j :tabnext  <CR>
-tnoremap <Leader>j <C-\><C-n>
+nmap <S-j> :tabnext  <CR>
+"nmap <Leader>j :tabnext  <CR>
+"tnoremap <Leader>j <C-\><C-n>
 
 "nmap <C-Space> :tabprevious <CR>
 "nmap <C-k> :tabprevious <CR>
-"nmap <M-k> :tabprevious <CR>
+nmap <S-k> :tabprevious <CR>
 nmap <Leader>k :tabprevious <CR>
 tnoremap <Leader>k <C-\><C-n>
+tnoremap <S-k> <C-\><C-n>
+tnoremap <S-j> <C-\><C-n>
 
 nmap <Leader>0 :tabfirst<CR>
 tnoremap  <Leader>0 <C-\><C-n>
@@ -179,6 +218,7 @@ nmap <C-y> :tabnew <CR>:terminal <CR>
 "imap <C-t> :tabnew <cfile><CR>
 imap <C-t> <ESC> :tabnew <cfile> <CR>
 imap <C-j> <ESC> <cfile> <CR>
+"imap <S-j> <ESC> <cfile> <CR>
 
 nmap <F12> :VimBeGood<CR>
 map <F2> :wq! <CR>
@@ -196,7 +236,7 @@ map <F8> :G <CR>
 "nmap <C-l> <C-e>l
 
 "map <F9> :Gcommit <CR>
-let g:tmux_navigator_no_mappings = 1
+"let g:tmux_navigator_no_mappings = 1
 "nnoremap <C-F>t :CtrlSFToggle<CR>
 "map <silent> <c-a> :TmuxNavigateLeft<cr>
 "map <silent> <c-s> :TmuxNavigateDown<cr>
@@ -206,11 +246,13 @@ let g:tmux_navigator_no_mappings = 1
 "map <silent> <c-d> :TmuxNavigateRight<cr>
 "nnoremap <silent> <c-s> <C-a> <C-e>h
 "nnoremap <silent> <c-w> <C-s> <C-e>j
-nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
-nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+
+"nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
+"nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+"nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+"nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+"nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+
 "nmap <C-a> <C-e>h
 "nmap <C-s> <C-e>j
 "nmap <C-w> <C-e>k
@@ -240,7 +282,6 @@ let g:multi_cursor_quit_key            = '<Esc>'
 "highlight ColorColumn ctermbg=red
 "call matchadd('ColorColumn', '\%81v', 100)
 
-"set termguicolors
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 "set foldmethod=syntax
 set clipboard=unnamedplus
@@ -305,7 +346,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 " gr - find references
 nmap <silent> gr <Plug>(coc-references)
 " gh - get hint on whatever's under the cursor
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> gx :call <SID>show_documentation()<CR>
 "nnoremap <silent> gh :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -340,6 +381,7 @@ endfunction
 
 set noshowmode
 set statusline+=%{g:battery_level}\ 
+	  "  \ 'colorscheme': 'dracula',
 
 call SetBatteryLevel(0)
 "call Setpomodoro(0)
