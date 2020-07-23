@@ -6,6 +6,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export EDITOR=nvim
 export TERM=xterm-256color
 # xclip -sel clip
+export PATH=/opt/flutter/bin/cache/dart-sdk/bin:$PATH
 
 ZSH_THEME="dracula"
 plugins=(
@@ -118,7 +119,8 @@ bindkey "^[[1;5D" backward-word
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
-bindkey -s '^T' 'nvim $(fzf)^M'
+bindkey -s '^H' 'nvim $(fzf)^M'
+#bindkey -s '^N' 'nvlc $(fzf)^M'
 bindkey -s '^B' 'cat /sys/class/power_supply/BAT0/capacity; date^M'
 bindkey '7;5u' 'backward-delete-char'
 bindkey '7;2u' 'backward-delete-char'

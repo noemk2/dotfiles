@@ -2,7 +2,12 @@ call plug#begin('~/.vim/plugged')
 "jsx
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'jparise/vim-graphql'
+Plug 'mileszs/ack.vim'
 "Plug 'nathanaelkane/vim-indent-guides'
+Plug 'dart-lang/dart-vim-plugin'
+"Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
 
 "Plug 'altercation/vim-colors-solarized'
 
@@ -24,7 +29,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 
 Plug 'tpope/vim-fugitive'
 "Plug 'altercation/vim-colors-solarized'
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
 Plug 'kassio/neoterm'
 "Plug 'ThePrimeagen/vim-be-good'
@@ -113,6 +118,8 @@ autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | end
 "nmap <silent> <leader>m :History<CR>
 nmap <silent><C-p> :History<CR>
 nmap <silent><C-0> :Rg <CR>
+nmap <silent>yy :y+<CR>
+
 ":nnoremap <C-p> :Rg<CR>
 
 "map <ESC><Nop>
@@ -132,16 +139,17 @@ imap <C-Space> <Nop>
 imap <C-t> <Nop>
 :nnoremap <C-o> o
 ""
-function! Guardar()
-:w! | :Neoformat | :w! | :Git add -A
-":w! | :Neoformat 
-endfunction
+"function! Guardar()
+":w! | :Neoformat | :w! | :Git add -A
+"":w! | :Neoformat 
+"endfunction
 
 "
 "nmap  <C-s> :w! <cr> :Neoformat! <cr><cr> :w! <cr>
+noremap <silent> <C-s> :w! <cr> :Neoformat <cr> :w! <cr> :Git add -A <cr>
 "noremap <silent> <C-s> :w! <cr> :Neoformat <cr><cr> :w! <cr><cr> :Git add -A <cr>
 "noremap <silent> <C-s> :Neoformat | w! | Git add -A <cr>
-nmap <silent> <C-s> :call Guardar()<cr> 
+"nmap <silent> <C-s> :call Guardar()<cr> 
 "noremap <silent> <C-s> :call Guardar()<CR>
 nmap <silent> <C-g> :put=strftime('%c')<cr> 
 nmap <silent> <C-z> :Git commit <cr>
@@ -162,6 +170,7 @@ noremap <ESC> :noh <cr>
 ":tnoremap <C-k> <C-\><C-n>
 
 :tnoremap <C-w> <C-\><C-n>
+:tnoremap <C-y> <C-\><C-n>
 :tnoremap <S-j> <C-\><C-n>
 :tnoremap <S-k> <C-\><C-n>
 ":tnoremap <C-x> <C-\><C-n>
@@ -217,7 +226,7 @@ nmap <C-t> :tabnew <CR>
 nmap <C-y> :tabnew <CR>:terminal <CR>
 "imap <C-t> :tabnew <cfile><CR>
 imap <C-t> <ESC> :tabnew <cfile> <CR>
-imap <C-j> <ESC> <cfile> <CR>
+"imap <C-j> <ESC> <cfile> <CR>
 "imap <S-j> <ESC> <cfile> <CR>
 
 nmap <F12> :VimBeGood<CR>
@@ -265,17 +274,17 @@ nmap <C-h> <C-e>h
 nmap <C-j> <C-e>j
 nmap <C-k> <C-e>k
 nmap <C-l> <C-e>l
-let g:multi_cursor_use_default_mapping=0
+"let g:multi_cursor_use_default_mapping=0
 
-" Default mapping
-let g:multi_cursor_start_word_key      = '<C-n>'
-let g:multi_cursor_select_all_word_key = '<A-n>'
-let g:multi_cursor_start_key           = 'g<C-n>'
-let g:multi_cursor_select_all_key      = 'g<A-n>'
-let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_prev_key            = '<C-d>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
+"" Default mapping
+"let g:multi_cursor_start_word_key      = '<C-n>'
+"let g:multi_cursor_select_all_word_key = '<A-n>'
+"let g:multi_cursor_start_key           = 'g<C-n>'
+"let g:multi_cursor_select_all_key      = 'g<A-n>'
+"let g:multi_cursor_next_key            = '<C-n>'
+"let g:multi_cursor_prev_key            = '<C-d>'
+"let g:multi_cursor_skip_key            = '<C-x>'
+"let g:multi_cursor_quit_key            = '<Esc>'
 "nnoremap <silent>
 "noremap <silent> <c-Space> :TmuxNavigatePrevious<cr>
 "set colorcolumn=1
