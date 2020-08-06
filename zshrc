@@ -1,12 +1,15 @@
 export ZSH="/home/noe/.oh-my-zsh"
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/go/bin:$PATH
+export PATH=~/Postman/:$PATH
 export PATH=~/.local/bin:$PATH
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export EDITOR=nvim
 export TERM=xterm-256color
 # xclip -sel clip
 export PATH=/opt/flutter/bin/cache/dart-sdk/bin:$PATH
+export PATH=~/.config/composer/vendor/bin:$PATH
+
 
 ZSH_THEME="dracula"
 plugins=(

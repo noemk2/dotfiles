@@ -2,12 +2,17 @@ call plug#begin('~/.vim/plugged')
 "jsx
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'jparise/vim-graphql'
-Plug 'mileszs/ack.vim'
+Plug 'nikvdp/ejs-syntax'
+Plug 'jbmorgado/vim-pine-script'
+"Plug 'lfilho/cosco.vim'
+"Plug 'tpope/vim-repeat'
+"Plug 'StanAngeloff/php.vim'
+"Plug 'dsawardekar/wordpress.vim'
+"Plug 'jparise/vim-graphql'
+"Plug 'mileszs/ack.vim'
 "Plug 'nathanaelkane/vim-indent-guides'
-Plug 'dart-lang/dart-vim-plugin'
 "Plug 'dart-lang/dart-vim-plugin'
-Plug 'thosakwe/vim-flutter'
+"Plug 'thosakwe/vim-flutter'
 
 "Plug 'altercation/vim-colors-solarized'
 
@@ -25,13 +30,13 @@ Plug 'thosakwe/vim-flutter'
 "Plug 'leafgarland/typescript-vim'
 "Plug 'peitalin/vim-jsx-typescript'
 "Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-"Plug 'jparise/vim-graphql'
 
 Plug 'tpope/vim-fugitive'
 "Plug 'altercation/vim-colors-solarized'
-"Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
 Plug 'kassio/neoterm'
+
 "Plug 'ThePrimeagen/vim-be-good'
 "Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 "Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
@@ -57,6 +62,9 @@ Plug 'honza/vim-snippets'
 "Plug 'pangloss/vim-javascript'
 "Plug 'evanleck/vim-svelte'
 call plug#end()
+
+"let g:cosco_ignore_comment_lines = 1     " Default : 0
+"nmap <F9> :AutoCommaOrSemiColonToggle<CR>
 syntax enable
 set background=dark
 colorscheme dracula
@@ -235,7 +243,7 @@ map <F5> :w! <CR>
 "map <F4> :q! <CR>
 map <C-w> :q! <CR>
 "map <C-w> <ESC> :q! <cfile> <CR>
-map <F3> :botright Tnew <CR>
+map <F3> :botright Tnew <CR> <C-j>i <CR>
 map <F8> :G <CR>
 "nnoremap <silent> <C-w> <C-e>h
 "nmap <C-h> <C-e>h
