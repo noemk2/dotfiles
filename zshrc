@@ -16,15 +16,17 @@ plugins=(
 	git
 	z
 	#zsh-completions
+	rbenv
 )
 
-source $HOME/.cargo/env
-source $HOME/.fzf-z/fzf-z.plugin.zsh
+#source $HOME/.cargo/env
+#source $HOME/.fzf-z/fzf-z.plugin.zsh
 source $ZSH/oh-my-zsh.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #source $ZSH/custom/plugins/zsh-completions
 source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/custom/plugins/zsh-nodenv/zsh-nodenv.plugin.zsh
 
 
 #alias reconectar="sudo nmcli dev wifi connect ALCA password cotoperi411"
