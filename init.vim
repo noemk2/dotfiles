@@ -4,6 +4,7 @@ Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'nikvdp/ejs-syntax'
 Plug 'jbmorgado/vim-pine-script'
+Plug 'svermeulen/vim-macrobatics'
 "Plug 'lfilho/cosco.vim'
 "Plug 'tpope/vim-repeat'
 "Plug 'StanAngeloff/php.vim'
@@ -12,6 +13,7 @@ Plug 'jbmorgado/vim-pine-script'
 "Plug 'mileszs/ack.vim'
 "Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'dart-lang/dart-vim-plugin'
+
 "Plug 'thosakwe/vim-flutter'
 
 "Plug 'altercation/vim-colors-solarized'
@@ -31,16 +33,12 @@ Plug 'jbmorgado/vim-pine-script'
 "Plug 'peitalin/vim-jsx-typescript'
 "Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 "Plug 'altercation/vim-colors-solarized'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'justinmk/vim-sneak'
 Plug 'kassio/neoterm'
-
 "Plug 'ThePrimeagen/vim-be-good'
-"Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'tpope/vim-surround'
 Plug 'sbdchd/neoformat'
 Plug 'raimondi/delimitmate'
@@ -62,17 +60,23 @@ Plug 'honza/vim-snippets'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'pangloss/vim-javascript'
 "Plug 'evanleck/vim-svelte'
+Plug 'sickill/vim-monokai'
+Plug 'edersonferreira/dalton-vim'
 call plug#end()
 
 "let g:cosco_ignore_comment_lines = 1     " Default : 0
 "nmap <F9> :AutoCommaOrSemiColonToggle<CR>
 syntax enable
 set background=dark
-colorscheme dracula
-
+"colorscheme dracula
+colorscheme dalton
+nmap <nowait> q <plug>(Mac_Play)
+nmap <nowait> gq <plug>(Mac_RecordNew)
+nmap <leader>mh :DisplayMacroHistory<cr>
+nmap [m <plug>(Mac_RotateBack)
+nmap ]m <plug>(Mac_RotateForward)
 let g:vim_jsx_pretty_colorful_config = 1 
 let g:vim_jsx_pretty_highlight_close_tag = 1
-
 "let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_start_level=2
 "let g:indent_guides_guide_size=1
@@ -125,8 +129,8 @@ autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | end
 ":nmap <space>e :CocCommand explorer<CR>
 ":nnoremap <C-n> :NERDTreeToggle<CR>
 "nmap <silent> <leader>m :History<CR>
+"nmap <C-0>  <CR>
 nmap <silent><C-p> :History<CR>
-nmap <silent><C-0> :Rg <CR>
 nmap <silent>yy :y+<CR>
 
 ":nnoremap <C-p> :Rg<CR>
@@ -142,7 +146,7 @@ map <C-.> <Nop>
 map <C-u> <Nop>
 map <C-d> <Nop>
 map <C-t> <Nop>
-imap <C-u> <Nop>
+"imap <C-u> <Nop>
 imap <C-tab> <Nop>
 imap <C-Space> <Nop>
 imap <C-t> <Nop>
@@ -152,16 +156,20 @@ imap <C-t> <Nop>
 ":w! | :Neoformat | :w! | :Git add -A
 "":w! | :Neoformat 
 "endfunction
-
+function! Buscar()
+	:Rg
+endfunction
 "
+nmap <silent> <C-u> :call Buscar()<cr> 
 "nmap  <C-s> :w! <cr> :Neoformat! <cr><cr> :w! <cr>
-noremap <silent> <C-s> :w! <cr> :Neoformat <cr> :w! <cr> :Git add -A <cr>
+"noremap <silent> <C-s> :w! <cr> :Neoformat <cr> :w! <cr> :Git add -A <cr>
+noremap <silent> <C-s> :w! <cr> :Neoformat <cr> :w! <cr> <ESC> <C-\><C-n><cr> :noh <cr> 
 "noremap <silent> <C-s> :w! <cr> :Neoformat <cr><cr> :w! <cr><cr> :Git add -A <cr>
 "noremap <silent> <C-s> :Neoformat | w! | Git add -A <cr>
 "nmap <silent> <C-s> :call Guardar()<cr> 
 "noremap <silent> <C-s> :call Guardar()<CR>
 nmap <silent> <C-g> :put=strftime('%c')<cr> 
-nmap <silent> <C-z> :Git commit <cr>
+"nmap <silent> <C-z> :Git commit <cr>
 "execute set <M-j>=\ej
 "nnoremap <M-j> j
 "imap <C-u> :w! <cr> :Neoformat <cr><cr> :w! <cr>
@@ -377,15 +385,15 @@ endfunction
 
 
 "inite
-let g:battery_level = ''
-function SetBatteryLevel(timer_id)
-  let l:battery_level = system('cat /sys/class/power_supply/BAT0/capacity')
-  if (battery_level != '')
-    let g:battery_level = l:battery_level
-    redraw!
-  endif
-  call timer_start(30000, 'SetBatteryLevel')
-endfunction
+"let g:battery_level = ''
+"function SetBatteryLevel(timer_id)
+  "let l:battery_level = system('cat /sys/class/power_supply/BAT0/capacity')
+  "if (battery_level != '')
+    "let g:battery_level = l:battery_level
+    "redraw!
+  "endif
+  "call timer_start(30000, 'SetBatteryLevel')
+"endfunction
 
 "let g:pomodoro= ''
 "function Setpomodoro(timer_id)
@@ -401,7 +409,7 @@ set noshowmode
 set statusline+=%{g:battery_level}\ 
 	  "  \ 'colorscheme': 'dracula',
 
-call SetBatteryLevel(0)
+"call SetBatteryLevel(0)
 "call Setpomodoro(0)
  "'readonly', filetype, 'lineinfo'
 let g:lightline = {
@@ -413,14 +421,15 @@ let g:lightline = {
 	  "\   'right': [ [ 'lineinfo' ],
 	  \   'right':[
 	  \			    ['pomodoro'],
-	  \             [ 'bateria' ], 
+	  "\             [ 'bateria' ], 
 	  "\             [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
 	  \             []]
 	  "\               [ 'pomodoro' ]]
 	  \ },
 	  \ 'component': {
-	  \   'bateria': '%{g:battery_level}/', 
+	  "\   'bateria': '%{g:battery_level}/', 
 	  "\   'pomodoro': '%{g:pomodoro}/'
 	  \ },
 	  \ }
+
 

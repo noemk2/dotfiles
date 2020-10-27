@@ -1,5 +1,7 @@
 export ZSH="/home/noe/.oh-my-zsh"
 export PATH=~/.npm-global/bin:$PATH
+export PATH=~/.yarn/bin:$PATH
+export PATH=/usr/bin/vendor_perl:$PATH
 export PATH=~/go/bin:$PATH
 export PATH=~/Postman/:$PATH
 export PATH=~/.local/bin:$PATH
@@ -9,20 +11,22 @@ export TERM=xterm-256color
 # xclip -sel clip
 export PATH=/opt/flutter/bin/cache/dart-sdk/bin:$PATH
 export PATH=~/.config/composer/vendor/bin:$PATH
-
+#cvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3
 
 ZSH_THEME="dracula"
 plugins=(
 	git
+	yarn
 	z
 	#zsh-completions
 	rbenv
+	rails
 )
 
 #source $HOME/.cargo/env
-#source $HOME/.fzf-z/fzf-z.plugin.zsh
+source $HOME/.fzf-z/fzf-z.plugin.zsh
 source $ZSH/oh-my-zsh.sh
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #source $ZSH/custom/plugins/zsh-completions
 source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -60,10 +64,10 @@ alias ccc="xclip -sel clip"
 #alias ventana4='tmux new-window \; split-window \; split-window -d \; split-window -h'
 #alias l="learnyounode"
 #alias sl="sudo systemctl suspend"
-alias sl="systemctl suspend"
+alias sleep="systemctl suspend"
 #alias plat="cd ~/Platzi/notas_clases/js/asinc"
-alias radio="cvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
-alias radio2="nvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
+#alias radio="cvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
+alias radio3="mocp https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3"
 #alias note="v ~/Documentos/MyBookmark/bookmarks"
 alias vinit="v ~/.dotfiles/init.vim"
 alias zinit="v ~/.dotfiles/zshrc"
