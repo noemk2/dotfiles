@@ -128,7 +128,7 @@ bindkey "^[[1;5D" backward-word
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
-bindkey -s '^H' 'nvim $(fzf)^M'
+#bindkey -s '^H' 'nvim $(fzf)^M'
 #bindkey -s '^N' 'nvlc $(fzf)^M'
 bindkey -s '^B' 'cat /sys/class/power_supply/BAT0/capacity; date^M'
 bindkey '7;5u' 'backward-delete-char'

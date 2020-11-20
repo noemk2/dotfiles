@@ -3,8 +3,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'nikvdp/ejs-syntax'
-Plug 'jbmorgado/vim-pine-script'
-Plug 'svermeulen/vim-macrobatics'
+"Plug 'jbmorgado/vim-pine-script'
+"Plug 'svermeulen/vim-macrobatics'
 "Plug 'lfilho/cosco.vim'
 "Plug 'tpope/vim-repeat'
 "Plug 'StanAngeloff/php.vim'
@@ -20,7 +20,7 @@ Plug 'svermeulen/vim-macrobatics'
 
 "Plug 'pangloss/vim-javascript'
 "Plug 'mxw/vim-jsx'
-"Plug 'lifepillar/vim-solarized8'
+Plug 'lifepillar/vim-solarized8'
 
 
 "Plug 'maxmellon/vim-jsx-pretty'
@@ -36,7 +36,7 @@ Plug 'svermeulen/vim-macrobatics'
 "Plug 'tpope/vim-fugitive'
 "Plug 'altercation/vim-colors-solarized'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'justinmk/vim-sneak'
+"Plug 'justinmk/vim-sneak'
 Plug 'kassio/neoterm'
 "Plug 'ThePrimeagen/vim-be-good'
 Plug 'tpope/vim-surround'
@@ -47,8 +47,7 @@ Plug 'luochen1990/rainbow'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
-
+"Plug 'dracula/vim', { 'as': 'dracula' }
 Plug '~/.fzf'
 "Plug '~/.fzf-session.vim'
 Plug 'junegunn/fzf.vim'
@@ -61,144 +60,87 @@ Plug 'honza/vim-snippets'
 "Plug 'pangloss/vim-javascript'
 "Plug 'evanleck/vim-svelte'
 Plug 'sickill/vim-monokai'
-Plug 'edersonferreira/dalton-vim'
+"Plug 'edersonferreira/dalton-vim'
 call plug#end()
 
 "let g:cosco_ignore_comment_lines = 1     " Default : 0
 "nmap <F9> :AutoCommaOrSemiColonToggle<CR>
 syntax enable
 set background=dark
-"colorscheme dracula
-colorscheme dalton
-nmap <nowait> q <plug>(Mac_Play)
-nmap <nowait> gq <plug>(Mac_RecordNew)
-nmap <leader>mh :DisplayMacroHistory<cr>
-nmap [m <plug>(Mac_RotateBack)
-nmap ]m <plug>(Mac_RotateForward)
 let g:vim_jsx_pretty_colorful_config = 1 
 let g:vim_jsx_pretty_highlight_close_tag = 1
-"let g:indent_guides_enable_on_vim_startup = 1
-"let g:indent_guides_start_level=2
-"let g:indent_guides_guide_size=1
-"let g:fzf_session_path = $HOME . '/tmp/vim/session'
-"let g:vim_jsx_pretty_colorful_config = 1 " default 0
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
-map <s-k> <Nop>
-set t_AB=^[[48;5;%dm
-set t_AF=^[[38;5;%dm
-" Copy/Paste
-"vnoremap <silent><Leader>y "yy <Bar> :call system('xclip', @y)<CR>
-"vnoremap <silent> p<Bar> :call system('xclip -o -selection clipboard')<CR>
-"vnoremap <silent> p<Bar> :call system('xclip -o -selection clipboard', @y)<CR>
-set nocompatible                                           
-"set t_Co=256
+"colorscheme dalton
+colorscheme monokai 
+"nmap <nowait> q <plug>(Mac_Play)
+"nmap <nowait> gq <plug>(Mac_RecordNew)
+"nmap <leader>mh :DisplayMacroHistory<cr>
+"nmap [m <plug>(Mac_RotateBack)
+"nmap ]m <plug>(Mac_RotateForward)
+"map f <Plug>Sneak_s
+"map F <Plug>Sneak_S
+"map <s-k> <Nop>
 
-"colorscheme solarized                                      
-"colorscheme dracula
-"colorscheme solarized 
+"set t_AB=^[[48;5;%dm
+"set t_AF=^[[38;5;%dm
+set nocompatible                                           
 filetype plugin on
 highlight LineNr ctermfg=blue term=bold
-":highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-"
 let g:neoterm_size= 10
-
 let g:user_emmet_leader_key=','
 "let g:tmux_navigator_disable_when_zoomed = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
 let g:neosnippet#enable_snipmate_compatibility = 1
-"let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
-"let base16colorspace=256
 let g:neoformat_try_formatprg = 1
 let mapleader="g"
 let g:rainbow_active = 1 
 
 :nnoremap <C-e> <C-w>
-" Explorer
 nmap <space>e :CocCommand explorer<CR>
-" Use preset argument to open it
-"nmap <space>ed :CocCommand explorer --preset .vim<CR>
-"nmap <space>ef :CocCommand explorer --preset floating<CR>
-
-" List all presets
-"nmap <space>el :CocList explPresets
 nmap <space>f :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-":nmap <space>e :CocCommand explorer<CR>
-":nnoremap <C-n> :NERDTreeToggle<CR>
-"nmap <silent> <leader>m :History<CR>
-"nmap <C-0>  <CR>
 nmap <silent><C-p> :History<CR>
 nmap <silent>yy :y+<CR>
 
-":nnoremap <C-p> :Rg<CR>
+"map <C-,> <Nop>
+"map <C-s> <Nop>
+"map <S-j> <Nop>
+"map <C-m> <Nop>
+"map <C-o> <Nop>
+"map <C-z> <Nop>
+"map <C-;> <Nop>
+"map <C-.> <Nop>
+"map <C-u> <Nop>
+"map <C-d> <Nop>
+"map <C-t> <Nop>
+"imap <C-tab> <Nop>
+"imap <C-Space> <Nop>
+"imap <C-t> <Nop>
+":nnoremap <C-o> o
 
-"map <ESC><Nop>
-map <C-,> <Nop>
-map <S-j> <Nop>
-map <C-m> <Nop>
-map <C-o> <Nop>
-map <C-z> <Nop>
-map <C-;> <Nop>
-map <C-.> <Nop>
-map <C-u> <Nop>
-map <C-d> <Nop>
-map <C-t> <Nop>
-"imap <C-u> <Nop>
-imap <C-tab> <Nop>
-imap <C-Space> <Nop>
-imap <C-t> <Nop>
-:nnoremap <C-o> o
-""
-"function! Guardar()
-":w! | :Neoformat | :w! | :Git add -A
-"":w! | :Neoformat 
-"endfunction
 function! Buscar()
 	:Rg
 endfunction
 "
+"function! Guardar()
+	":w! 
+	":Neoformat
+	":w!
+
+"endfunction
+nmap <C-s> :w <cr> 
+nmap <silent> <C-f> :Neoformat <cr> 
 nmap <silent> <C-u> :call Buscar()<cr> 
-"nmap  <C-s> :w! <cr> :Neoformat! <cr><cr> :w! <cr>
-"noremap <silent> <C-s> :w! <cr> :Neoformat <cr> :w! <cr> :Git add -A <cr>
-noremap <silent> <C-s> :w! <cr> :Neoformat <cr> :w! <cr> <ESC> <C-\><C-n><cr> :noh <cr> 
-"noremap <silent> <C-s> :w! <cr> :Neoformat <cr><cr> :w! <cr><cr> :Git add -A <cr>
-"noremap <silent> <C-s> :Neoformat | w! | Git add -A <cr>
-"nmap <silent> <C-s> :call Guardar()<cr> 
-"noremap <silent> <C-s> :call Guardar()<CR>
 nmap <silent> <C-g> :put=strftime('%c')<cr> 
-"nmap <silent> <C-z> :Git commit <cr>
-"execute set <M-j>=\ej
-"nnoremap <M-j> j
-"imap <C-u> :w! <cr> :Neoformat <cr><cr> :w! <cr>
-"imap <C-u> <ESC> :w! <cfile> <CR>
-"inoremap <tab> def
 :tnoremap <ESC> <C-\><C-n><cr> :noh <cr> 
 noremap <ESC> :noh <cr> 
-"
-":tnoremap <C-tab> <C-\><C-n>
-":tnoremap <C-Space> <C-\><C-n>
-":tnoremap <M-j> <C-\><C-n>
-":tnoremap <M-k> <C-\><C-n>
-
-":tnoremap <C-j> <C-\><C-n>
-":tnoremap <C-k> <C-\><C-n>
-
 :tnoremap <C-w> <C-\><C-n>
 :tnoremap <C-y> <C-\><C-n>
 :tnoremap <S-j> <C-\><C-n>
 :tnoremap <S-k> <C-\><C-n>
-":tnoremap <C-x> <C-\><C-n>
-"
-"nmap <C-j> :tabnext  <CR>
 nmap <S-j> :tabnext  <CR>
-"nmap <Leader>j :tabnext  <CR>
-"tnoremap <Leader>j <C-\><C-n>
 
-"nmap <C-Space> :tabprevious <CR>
-"nmap <C-k> :tabprevious <CR>
 nmap <S-k> :tabprevious <CR>
 nmap <Leader>k :tabprevious <CR>
 tnoremap <Leader>k <C-\><C-n>
@@ -406,21 +348,21 @@ endfunction
 "endfunction
 
 set noshowmode
-set statusline+=%{g:battery_level}\ 
+"set statusline+=%{g:battery_level}\ 
 	  "  \ 'colorscheme': 'dracula',
 
 "call SetBatteryLevel(0)
 "call Setpomodoro(0)
  "'readonly', filetype, 'lineinfo'
 let g:lightline = {
-	  \ 'colorscheme': 'dracula',
+	  \ 'colorscheme': 'material',
 	  \ 'active': {
 	  \   'left': [ [ 'mode', 'paste' ],
 	  \              [ 'absolutepath', 'modified' ] ], 
 	  "\             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
 	  "\   'right': [ [ 'lineinfo' ],
 	  \   'right':[
-	  \			    ['pomodoro'],
+	  \			    [],
 	  "\             [ 'bateria' ], 
 	  "\             [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
 	  \             []]
