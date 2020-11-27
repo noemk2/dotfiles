@@ -13,7 +13,7 @@ export PATH=/opt/flutter/bin/cache/dart-sdk/bin:$PATH
 export PATH=~/.config/composer/vendor/bin:$PATH
 #cvlc https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3
 
-ZSH_THEME="dracula"
+ZSH_THEME="cloud"
 plugins=(
 	git
 	yarn

@@ -71,6 +71,10 @@ let g:vim_jsx_pretty_colorful_config = 1
 let g:vim_jsx_pretty_highlight_close_tag = 1
 "colorscheme dalton
 colorscheme monokai 
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 "nmap <nowait> q <plug>(Mac_Play)
 "nmap <nowait> gq <plug>(Mac_RecordNew)
 "nmap <leader>mh :DisplayMacroHistory<cr>
@@ -103,7 +107,6 @@ autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | end
 nmap <silent><C-p> :History<CR>
 nmap <silent>yy :y+<CR>
 
-"map <C-,> <Nop>
 "map <C-s> <Nop>
 "map <S-j> <Nop>
 "map <C-m> <Nop>
@@ -135,6 +138,12 @@ nmap <silent> <C-u> :call Buscar()<cr>
 nmap <silent> <C-g> :put=strftime('%c')<cr> 
 :tnoremap <ESC> <C-\><C-n><cr> :noh <cr> 
 noremap <ESC> :noh <cr> 
+
+nmap c <Nop>
+noremap c :noh <cr> 
+":tnoremap <C-c> <C-\><C-n><cr> :noh <cr> 
+noremap <C-c> :noh <cr> 
+noremap <C-w> :noh <cr> 
 :tnoremap <C-w> <C-\><C-n>
 :tnoremap <C-y> <C-\><C-n>
 :tnoremap <S-j> <C-\><C-n>
@@ -252,7 +261,8 @@ nmap <C-l> <C-e>l
 
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 "set foldmethod=syntax
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set cursorline
 set history=3000
 "set relativenumber
