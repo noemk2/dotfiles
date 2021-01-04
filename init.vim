@@ -3,6 +3,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'nikvdp/ejs-syntax'
+"react
+Plug 'SirVer/ultisnips'
+Plug 'mlaursen/vim-react-snippets'
+"autoimport 
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
+"csscolor
+Plug 'ap/vim-css-color'
 "Plug 'jbmorgado/vim-pine-script'
 "Plug 'svermeulen/vim-macrobatics'
 "Plug 'lfilho/cosco.vim'
@@ -108,6 +116,8 @@ nmap <silent><C-p> :History<CR>
 nmap <silent>yy :y+<CR>
 
 "map <C-s> <Nop>
+map <S-h> <Nop>
+map <S-l> <Nop>
 "map <S-j> <Nop>
 "map <C-m> <Nop>
 "map <C-o> <Nop>
@@ -142,7 +152,7 @@ noremap <ESC> :noh <cr>
 nmap c <Nop>
 noremap c :noh <cr> 
 ":tnoremap <C-c> <C-\><C-n><cr> :noh <cr> 
-noremap <C-c> :noh <cr> 
+"noremap <C-c> :noh <cr> 
 noremap <C-w> :noh <cr> 
 :tnoremap <C-w> <C-\><C-n>
 :tnoremap <C-y> <C-\><C-n>

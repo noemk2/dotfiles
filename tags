@@ -1,0 +1,77 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+0	coc-settings.json	/^    "<cr>": ["expandable?", "expand", "open"],$/;"	s	array:explorer.keyMappings.<cr>
+1	coc-settings.json	/^    "<cr>": ["expandable?", "expand", "open"],$/;"	s	array:explorer.keyMappings.<cr>
+2	coc-settings.json	/^    "<cr>": ["expandable?", "expand", "open"],$/;"	s	array:explorer.keyMappings.<cr>
+<C-f>	init.vim	/^nmap <silent> <C-f> :Neoformat <cr> $/;"	m
+<C-g>	init.vim	/^nmap <silent> <C-g> :put=strftime('%c')<cr> $/;"	m
+<C-h>	init.vim	/^nmap <C-h> <C-e>h$/;"	m
+<C-j>	init.vim	/^nmap <C-j> <C-e>j$/;"	m
+<C-k>	init.vim	/^imap  <C-k>    <Plug>(neosnippet_expand_or_jump)$/;"	m
+<C-k>	init.vim	/^nmap <C-k> <C-e>k$/;"	m
+<C-l>	init.vim	/^nmap <C-l> <C-e>l$/;"	m
+<C-p>	init.vim	/^nmap <silent><C-p> :History<CR>$/;"	m
+<C-s>	init.vim	/^nmap <C-s> :w <cr> $/;"	m
+<C-t>	init.vim	/^imap <C-t> <ESC> :tabnew <cfile> <CR>$/;"	m
+<C-t>	init.vim	/^nmap <C-t> :tabnew <CR>$/;"	m
+<C-u>	init.vim	/^nmap <silent> <C-u> :call Buscar()<cr> $/;"	m
+<C-w>	init.vim	/^map <C-w> :q! <CR>$/;"	m
+<C-w>	init.vim	/^noremap <C-w> :noh <cr> $/;"	m
+<C-y>	init.vim	/^nmap <C-y> :tabnew <CR>:terminal <CR>$/;"	m
+<ESC>	init.vim	/^noremap <ESC> :noh <cr> $/;"	m
+<F12>	init.vim	/^nmap <F12> :VimBeGood<CR>$/;"	m
+<F2>	init.vim	/^map <F2> :wq! <CR>$/;"	m
+<F3>	init.vim	/^map <F3> :botright Tnew <CR> <C-j>i <CR>$/;"	m
+<F5>	init.vim	/^map <F5> :w! <CR>$/;"	m
+<F8>	init.vim	/^map <F8> :G <CR>$/;"	m
+<Leader>$	init.vim	/^nmap <Leader>$ :tablast<CR>$/;"	m
+<Leader>0	init.vim	/^nmap <Leader>0 :tabfirst<CR>$/;"	m
+<Leader>k	init.vim	/^nmap <Leader>k :tabprevious <CR>$/;"	m
+<Leader>m	init.vim	/^nmap <Leader>m :tabmove<CR>$/;"	m
+<M-1>	init.vim	/^nmap <M-1> :tabm 0 <CR>$/;"	m
+<M-2>	init.vim	/^nmap <M-2> :tabm 2 <CR>$/;"	m
+<M-3>	init.vim	/^nmap <M-3> :tabm 3 <CR>$/;"	m
+<M-4>	init.vim	/^nmap <M-4> :tabm 4 <CR>$/;"	m
+<S-h>	init.vim	/^map <S-h> <Nop>$/;"	m
+<S-j>	init.vim	/^nmap <S-j> :tabnext  <CR>$/;"	m
+<S-k>	init.vim	/^nmap <S-k> :tabprevious <CR>$/;"	m
+<S-l>	init.vim	/^map <S-l> <Nop>$/;"	m
+<cr>	coc-settings.json	/^    "<cr>": ["expandable?", "expand", "open"],$/;"	a	object:explorer.keyMappings
+<space>e	init.vim	/^nmap <space>e :CocCommand explorer<CR>$/;"	m
+<space>f	init.vim	/^nmap <space>f :CocCommand explorer --preset floating<CR>$/;"	m
+Buscar	init.vim	/^function! Buscar()$/;"	f
+\x20 label editor	rifle.conf	/^mime ^text,  label editor = \/usr\/bin\/nvim -- "$@"$/;"	k
+c	init.vim	/^nmap c <Nop>$/;"	m
+c	init.vim	/^noremap c :noh <cr> $/;"	m
+explorer.icon.enableNerdfont	coc-settings.json	/^  "explorer.icon.enableNerdfont": true,$/;"	b
+explorer.keyMappings	coc-settings.json	/^  "explorer.keyMappings": {$/;"	o
+explorer.previewAction.onHover	coc-settings.json	/^  "explorer.previewAction.onHover": false,$/;"	b
+g:coc_explorer_global_presets	init.vim	/^let g:coc_explorer_global_presets = {$/;"	v
+g:javascript_plugin_flow	init.vim	/^let g:javascript_plugin_flow = 1$/;"	v
+g:javascript_plugin_jsdoc	init.vim	/^let g:javascript_plugin_jsdoc = 1$/;"	v
+g:javascript_plugin_ngdoc	init.vim	/^let g:javascript_plugin_ngdoc = 1$/;"	v
+g:lightline	init.vim	/^let g:lightline = {$/;"	v
+g:neoformat_try_formatprg	init.vim	/^let g:neoformat_try_formatprg = 1$/;"	v
+g:neosnippet#enable_snipmate_compatibility	init.vim	/^let g:neosnippet#enable_snipmate_compatibility = 1$/;"	v
+g:neoterm_size	init.vim	/^let g:neoterm_size= 10$/;"	v
+g:rainbow_active	init.vim	/^let g:rainbow_active = 1 $/;"	v
+g:user_emmet_leader_key	init.vim	/^let g:user_emmet_leader_key=','$/;"	v
+g:vim_jsx_pretty_colorful_config	init.vim	/^let g:vim_jsx_pretty_colorful_config = 1 $/;"	v
+g:vim_jsx_pretty_highlight_close_tag	init.vim	/^let g:vim_jsx_pretty_highlight_close_tag = 1$/;"	v
+gd	init.vim	/^nmap <silent> gd <Plug>(coc-definition)$/;"	m
+gi	init.vim	/^nmap <silent> gi <Plug>(coc-implementation)$/;"	m
+gr	init.vim	/^nmap <silent> gr <Plug>(coc-references)$/;"	m
+gx	init.vim	/^nnoremap <silent> gx :call <SID>show_documentation()<CR>$/;"	m
+gy	init.vim	/^nmap <silent> gy <Plug>(coc-type-definition)$/;"	m
+is_vim	tmux.conf	/^is_vim="ps -o state= -o comm= -t '#{pane_tty}' \\$/;"	k
+mapleader	init.vim	/^let mapleader="g"$/;"	v
+s:show_documentation	init.vim	/^function! s:show_documentation()$/;"	f
+v	coc-settings.json	/^    "v": "open:vsplit"$/;"	s	object:explorer.keyMappings
+yy	init.vim	/^nmap <silent>yy :y+<CR>$/;"	m
+zz	init.vim	/^nnoremap zz :update<cr>$/;"	m
