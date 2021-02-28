@@ -4,7 +4,7 @@ Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'nikvdp/ejs-syntax'
 "react
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 "autoimport 
 Plug 'ludovicchabant/vim-gutentags'
@@ -393,5 +393,3 @@ let g:lightline = {
 	  "\   'pomodoro': '%{g:pomodoro}/'
 	  \ },
 	  \ }
-
-
