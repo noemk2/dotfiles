@@ -1,11 +1,14 @@
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
 !_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
 !_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/noe/.dotfiles/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210110.0/
 0	coc-settings.json	/^    "<cr>": ["expandable?", "expand", "open"],$/;"	s	array:explorer.keyMappings.<cr>
 1	coc-settings.json	/^    "<cr>": ["expandable?", "expand", "open"],$/;"	s	array:explorer.keyMappings.<cr>
 2	coc-settings.json	/^    "<cr>": ["expandable?", "expand", "open"],$/;"	s	array:explorer.keyMappings.<cr>
@@ -16,7 +19,6 @@
 <C-k>	init.vim	/^imap  <C-k>    <Plug>(neosnippet_expand_or_jump)$/;"	m
 <C-k>	init.vim	/^nmap <C-k> <C-e>k$/;"	m
 <C-l>	init.vim	/^nmap <C-l> <C-e>l$/;"	m
-<C-p>	init.vim	/^nmap <silent><C-p> :History<CR>$/;"	m
 <C-s>	init.vim	/^nmap <C-s> :w <cr> $/;"	m
 <C-t>	init.vim	/^imap <C-t> <ESC> :tabnew <cfile> <CR>$/;"	m
 <C-t>	init.vim	/^nmap <C-t> :tabnew <CR>$/;"	m
@@ -43,8 +45,7 @@
 <S-k>	init.vim	/^nmap <S-k> :tabprevious <CR>$/;"	m
 <S-l>	init.vim	/^map <S-l> <Nop>$/;"	m
 <cr>	coc-settings.json	/^    "<cr>": ["expandable?", "expand", "open"],$/;"	a	object:explorer.keyMappings
-<space>e	init.vim	/^nmap <space>e :CocCommand explorer<CR>$/;"	m
-<space>f	init.vim	/^nmap <space>f :CocCommand explorer --preset floating<CR>$/;"	m
+<space>e	init.vim	/^nmap <space>e :RnvimrToggle<CR>$/;"	m
 Buscar	init.vim	/^function! Buscar()$/;"	f
 \x20 label editor	rifle.conf	/^mime ^text,  label editor = \/usr\/bin\/nvim -- "$@"$/;"	k
 c	init.vim	/^nmap c <Nop>$/;"	m
@@ -61,17 +62,15 @@ g:neoformat_try_formatprg	init.vim	/^let g:neoformat_try_formatprg = 1$/;"	v
 g:neosnippet#enable_snipmate_compatibility	init.vim	/^let g:neosnippet#enable_snipmate_compatibility = 1$/;"	v
 g:neoterm_size	init.vim	/^let g:neoterm_size= 10$/;"	v
 g:rainbow_active	init.vim	/^let g:rainbow_active = 1 $/;"	v
+g:rnvimr_border_attr	init.vim	/^let g:rnvimr_border_attr = {'fg': 14, 'bg': -1}$/;"	v
+g:rnvimr_enable_ex	init.vim	/^let g:rnvimr_enable_ex = 1$/;"	v
+g:rnvimr_enable_picker	init.vim	/^let g:rnvimr_enable_picker = 1$/;"	v
+g:rnvimr_ex_enable	init.vim	/^let g:rnvimr_ex_enable = 1$/;"	v
 g:user_emmet_leader_key	init.vim	/^let g:user_emmet_leader_key=','$/;"	v
 g:vim_jsx_pretty_colorful_config	init.vim	/^let g:vim_jsx_pretty_colorful_config = 1 $/;"	v
 g:vim_jsx_pretty_highlight_close_tag	init.vim	/^let g:vim_jsx_pretty_highlight_close_tag = 1$/;"	v
-gd	init.vim	/^nmap <silent> gd <Plug>(coc-definition)$/;"	m
-gi	init.vim	/^nmap <silent> gi <Plug>(coc-implementation)$/;"	m
-gr	init.vim	/^nmap <silent> gr <Plug>(coc-references)$/;"	m
-gx	init.vim	/^nnoremap <silent> gx :call <SID>show_documentation()<CR>$/;"	m
-gy	init.vim	/^nmap <silent> gy <Plug>(coc-type-definition)$/;"	m
 is_vim	tmux.conf	/^is_vim="ps -o state= -o comm= -t '#{pane_tty}' \\$/;"	k
 mapleader	init.vim	/^let mapleader="g"$/;"	v
 s:show_documentation	init.vim	/^function! s:show_documentation()$/;"	f
 v	coc-settings.json	/^    "v": "open:vsplit"$/;"	s	object:explorer.keyMappings
-yy	init.vim	/^nmap <silent>yy :y+<CR>$/;"	m
 zz	init.vim	/^nnoremap zz :update<cr>$/;"	m

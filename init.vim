@@ -3,7 +3,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'nikvdp/ejs-syntax'
+Plug 'SirVer/ultisnips'
 "react
+"ranger
+"Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+Plug 'kevinhwang91/rnvimr'
 "Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 "autoimport 
@@ -11,26 +15,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
 "csscolor
 Plug 'ap/vim-css-color'
-"Plug 'jbmorgado/vim-pine-script'
-"Plug 'svermeulen/vim-macrobatics'
-"Plug 'lfilho/cosco.vim'
-"Plug 'tpope/vim-repeat'
-"Plug 'StanAngeloff/php.vim'
-"Plug 'dsawardekar/wordpress.vim'
-"Plug 'jparise/vim-graphql'
-"Plug 'mileszs/ack.vim'
-"Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'dart-lang/dart-vim-plugin'
 
-"Plug 'thosakwe/vim-flutter'
-
-"Plug 'altercation/vim-colors-solarized'
-
-"Plug 'pangloss/vim-javascript'
-"Plug 'mxw/vim-jsx'
 Plug 'lifepillar/vim-solarized8'
-
-
 "Plug 'maxmellon/vim-jsx-pretty'
 "Plug 'jelera/vim-javascript-syntax'
 "Plug 'mxw/vim-jsx'
@@ -64,16 +50,28 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
+"Plug 'ycm-core/ycmd'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'pangloss/vim-javascript'
 "Plug 'evanleck/vim-svelte'
 Plug 'sickill/vim-monokai'
 "Plug 'edersonferreira/dalton-vim'
 call plug#end()
+"let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/ycmd/third_party/'
+"let g:ycm_auto_trigger
 
 "let g:cosco_ignore_comment_lines = 1     " Default : 0
 "nmap <F9> :AutoCommaOrSemiColonToggle<CR>
 syntax enable
+" Make Ranger replace netrw and be the file explorer
+let g:rnvimr_ex_enable = 1
+let g:rnvimr_enable_ex = 1
+let g:rnvimr_enable_picker = 1
+let g:rnvimr_border_attr = {'fg': 14, 'bg': -1}
+nmap <space>e :RnvimrToggle<CR>
+tnoremap <silent> <space>e <C-\><C-n>:RnvimrToggle<CR>
+"nmap <space>e ::RnvimrResize<CR>
+
 set background=dark
 let g:vim_jsx_pretty_colorful_config = 1 
 let g:vim_jsx_pretty_highlight_close_tag = 1
@@ -83,20 +81,11 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
-"nmap <nowait> q <plug>(Mac_Play)
-"nmap <nowait> gq <plug>(Mac_RecordNew)
-"nmap <leader>mh :DisplayMacroHistory<cr>
-"nmap [m <plug>(Mac_RotateBack)
-"nmap ]m <plug>(Mac_RotateForward)
-"map f <Plug>Sneak_s
-"map F <Plug>Sneak_S
-"map <s-k> <Nop>
 
-"set t_AB=^[[48;5;%dm
-"set t_AF=^[[38;5;%dm
 set nocompatible                                           
 filetype plugin on
 highlight LineNr ctermfg=blue term=bold
+
 let g:neoterm_size= 10
 let g:user_emmet_leader_key=','
 "let g:tmux_navigator_disable_when_zoomed = 1
@@ -109,28 +98,16 @@ let mapleader="g"
 let g:rainbow_active = 1 
 
 :nnoremap <C-e> <C-w>
-nmap <space>e :CocCommand explorer<CR>
-nmap <space>f :CocCommand explorer --preset floating<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-nmap <silent><C-p> :History<CR>
-nmap <silent>yy :y+<CR>
+"nmap <space>e :CocCommand explorer<CR>
+"nmap <space>f :CocCommand explorer --preset floating<CR>
+"autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+"nmap <silent><C-p> :History<CR>
+"nmap <silent>yy :y+<CR>
 
 "map <C-s> <Nop>
 map <S-h> <Nop>
 map <S-l> <Nop>
-"map <S-j> <Nop>
-"map <C-m> <Nop>
-"map <C-o> <Nop>
-"map <C-z> <Nop>
-"map <C-;> <Nop>
-"map <C-.> <Nop>
-"map <C-u> <Nop>
-"map <C-d> <Nop>
-"map <C-t> <Nop>
-"imap <C-tab> <Nop>
-"imap <C-Space> <Nop>
-"imap <C-t> <Nop>
-":nnoremap <C-o> o
+
 
 function! Buscar()
 	:Rg
@@ -327,14 +304,14 @@ set ai            " Auto indent
 " set si            " Smart indent
 "set wrap          " Wrap lines
 set nowrap        " Don't wrap textn
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+"nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gy <Plug>(coc-type-definition)
 " gi - go to implementation
-nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gi <Plug>(coc-implementation)
 " gr - find references
-nmap <silent> gr <Plug>(coc-references)
+"nmap <silent> gr <Plug>(coc-references)
 " gh - get hint on whatever's under the cursor
-nnoremap <silent> gx :call <SID>show_documentation()<CR>
+"nnoremap <silent> gx :call <SID>show_documentation()<CR>
 "nnoremap <silent> gh :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
